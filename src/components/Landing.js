@@ -186,11 +186,11 @@ const useStyles = makeStyles(theme => ({
     color: "#fff",
     paddingTop: '55px',
     marginBottom: '55px',
+    textAlign: 'center',
     display: "flex",
     justifyContent: 'center',
     alignItems:'center',
     width: '90%',
-    textAlign: 'center'
 
   },
   footerType: {
@@ -213,12 +213,14 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center'
   },
   logo: {
-    width: '50%'
+    width: '50%',
+    height: '50%'
   },
   footerLogo: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }));
 
@@ -239,10 +241,19 @@ function BusinessIcon(props) {
   );
 }
 
-function OrgIcon(props) {
+function Window(props) {
   return (
     <SvgIcon {...props}>
-      <path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z" />
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"/>
+    </SvgIcon>
+  );
+}
+
+function Gutter(props) {
+  return (
+    <SvgIcon {...props}>
+		<path d="M6.05,8.05c-2.73,2.73-2.73,7.15-0.02,9.88c1.47-3.4,4.09-6.24,7.36-7.93c-2.77,2.34-4.71,5.61-5.39,9.32c2.6,1.23,5.8,0.78,7.95-1.37C19.43,14.47,20,4,20,4S9.53,4.57,6.05,8.05z"/>
     </SvgIcon>
   );
 }
@@ -341,7 +352,7 @@ export default function Landing() {
               </Grid>
 
               <Grid className={classes.grid} item xs={12} sm={12} lg={3}>
-                <OrgIcon
+                <Window
                   className={classes.icon}
                   style={{ fontSize: 175 }}
                   color="disabled"
@@ -351,7 +362,21 @@ export default function Landing() {
                   variant="h5"
                   component="h3"
                 >
-                  Organization
+                  Window Washing
+                </Typography>
+              </Grid>
+              <Grid className={classes.grid} item xs={12} sm={12} lg={3}>
+                <Gutter
+                  className={classes.icon}
+                  style={{ fontSize: 175 }}
+                  color="disabled"
+                />
+                <Typography
+                  className={classes.type}
+                  variant="h5"
+                  component="h3"
+                >
+                  Gutter Cleaning
                 </Typography>
               </Grid>
             </Grid>
@@ -361,7 +386,7 @@ export default function Landing() {
               variant="h5"
               gutterBottom
             >
-              Our promise is to use 100% natural products to keep your
+              Our promise is to use 100% natural products (whenever possible) to keep your
               environment safe for your family, children, and pets.
             </Typography>
           </Paper>
@@ -459,53 +484,11 @@ export default function Landing() {
                     style={{ fontSize: 25 }}
                   />
                   <Typography
-                    className={classes.type}
-                    variant="h5"
-                    component="h3"
-                  >
-                    Murfreesboro
-                  </Typography>
-                </Grid>
-
-                <Grid
-                  className={classes.gridList}
-                  item
-                  xs={12}
-                  sm={8}
-                  md={6}
-                  lg={3}
-                >
-                  <LocIcon
-                    className={classes.listIcon}
-                    style={{ fontSize: 25 }}
-                  />
-                  <Typography
-                    className={classes.type}
-                    variant="h5"
-                    component="h3"
-                  >
-                    Smyrna
-                  </Typography>
-                </Grid>
-
-                <Grid
-                  className={classes.gridList}
-                  item
-                  xs={12}
-                  sm={8}
-                  md={6}
-                  lg={3}
-                >
-                  <LocIcon
-                    className={classes.listIcon}
-                    style={{ fontSize: 25 }}
-                  />
-                  <Typography
                     className={classes.null}
                     variant="h5"
                     component="h3"
                   >
-                    Thompsons Station
+                    Thompson's Station
                   </Typography>
                 </Grid>
 
@@ -558,21 +541,21 @@ export default function Landing() {
                     variant="h5"
                     component="h3"
                   >
-                    Don't see your city?
+                    Weekly, bi-weekly, monthly, and one time cleaning service available.
                   </Typography>
                   <Typography
                     className={classes.subHeader}
                     variant="h5"
                     component="h3"
                   >
-                    Give us a call at (615)497-2352 to find out if we can service your area!
+                    Give us a call at (615)497-2352 for a free estimate!
                   </Typography>
                 </div>
             </Paper>
           </div>
           <div className={classes.footer}>
           <Grid
-             container
+            container
             spacing={0}
             justify="space-around"
           > 
@@ -592,7 +575,7 @@ export default function Landing() {
                     Contact@ScrubForce.net
                 </Typography>
                 <Typography className={classes.footerType} variant='h5'>
-                    Servicing The Greater Nashville Area
+                    Licensed and Insured
                 </Typography>
               </div>
             </Grid>
